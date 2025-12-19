@@ -1041,6 +1041,52 @@
             font-size: 0.8rem;
             color: #555;
         }
+
+        /* About Me – Background Glow ONLY (No Border, No Edge Color) */
+        #about-container {
+            position: relative;
+        }
+
+        /* Pure background glow */
+        #about-container::before {
+          content: "";
+          position: absolute;
+
+          /* Push glow far behind the image */
+          inset: -40px;
+
+          border-radius: 50%;
+
+          /* Center-heavy glow, fades BEFORE reaching image edge */
+          background: radial-gradient(
+            circle at center,
+            rgba(255, 200, 120, 0.55), /* soft yellow */
+            rgba(255, 150, 50, 0.45),  /* warm orange */
+            transparent 60%
+          );
+
+          filter: blur(45px);
+          opacity: 0;
+          transition: opacity 0.35s ease;
+
+          z-index: 0;
+          pointer-events: none;
+        }
+
+        /* Show glow only on hover */
+        #about-container:hover::before {
+          opacity: 1;
+        }
+
+        /* Image stays completely clean */
+        #about-container img {
+          position: relative;
+          z-index: 1;
+          border-radius: 50%;
+          background: none;
+          box-shadow: none;
+          outline: none;
+        }
     </style>
 </head>
 
@@ -1174,8 +1220,30 @@
                     </div>
                 </div>
 
+                <div class="space-y-6 flex flex-col items-center">
+
+                <!-- LeetCode Card -->
+                <div class="glow-card transition-transform duration-300 hover:-translate-y-1 max-w-md w-full">
+                <img
+                  src="https://leetcard.jacoblin.cool/Abhishek_Tomar_99?theme=dark&font=Fira%20Code"
+                  class="w-full rounded-xl shadow-lg"
+                  alt="LeetCode Stats"
+                />
+              </div>
+
+              <!-- Codeforces Card -->
+              <div class="glow-card transition-transform duration-300 hover:-translate-y-1 max-w-md w-full">
+                <img
+                  src="https://codeforces-readme-stats.vercel.app/api/card?username=Abhishek_Tomar&theme=dark"
+                  class="w-full rounded-xl shadow-lg"
+                  alt="Codeforces Stats"
+                />
+              </div>
+            </div>
+
+
                 <!-- Profile Image (Static) -->
-                <div class="md:w-1/2 flex flex-col items-center animated-section">
+                <!-- <div class="md:w-1/2 flex flex-col items-center animated-section">
                     <div class="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96" id="profile-container">
                         <div
                             class="absolute inset-0 rounded-full p-[4px] bg-gradient-to-r from-pink-500 via-yellow-400 to-purple-600">
@@ -1186,7 +1254,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </section>
@@ -2628,6 +2696,7 @@
             </script>
 </body>
 </html>
+
 
 
 
