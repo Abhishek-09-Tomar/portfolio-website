@@ -192,12 +192,8 @@ Detects fake news using LIAR dataset and ML classification techniques.
 
 ---
 
-## 📈 GitHub Stats
-
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=Abhishek-09-Tomar&show_icons=true&count_private=true&hide_border=true&theme=tokyonight" height="165" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Abhishek-09-Tomar&layout=compact&hide_border=true&theme=tokyonight" height="165" />
-</p>
+## 📈 Contribution Graph
+![Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=Abhishek-09-Tomar&theme=tokyo-night)
 
 ---
 
